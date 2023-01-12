@@ -287,7 +287,7 @@ Of the top 10 colleges by players drafted, Miami (FL) again is the best college 
 	* Alabama
 	* Georgia
 
-### Regardless of round, NFL scouts should focuse their scouting to:
+### Regardless of round, NFL scouts should focus their scouting to:
 
 * States
 	* Massachusetts
