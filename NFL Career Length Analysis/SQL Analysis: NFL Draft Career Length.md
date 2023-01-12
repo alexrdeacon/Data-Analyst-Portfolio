@@ -263,3 +263,47 @@ ORDER BY
 | 10   | Oklahoma   | 277           | 4.05          |
 
 Of the top 10 colleges by players drafted, Miami (FL) again is the best college to attend to get the longest career on average no matter what round you are taken in.
+
+## Final Analysis:
+
+### NFL Scouts should focus their first round scouting to:
+
+* States
+	* California
+	* Florida
+	* Texas
+	* Alabama
+	* Ohio
+
+* Colleges
+	* Miami (FL)
+	* Texas
+	* Ohio St.
+	* Tennesee
+	* USC
+	* Florida
+	* Florida St.
+	* LSU
+	* Alabama
+	* Georgia
+
+### Regardless of round, NFL scouts should focuse their scouting to:
+
+* States
+	* Massachusetts
+	* Colorado
+	* Pennsylvania
+	* Idiana
+	* New York
+
+* Colleges
+	* Miami (FL)
+	* USC
+	* Penn St.
+	* Notre Dame
+	* Florida
+	* Michigan
+	* Ohio St.
+	* Nebraska
+	* Alabama
+	* Oklahoma
