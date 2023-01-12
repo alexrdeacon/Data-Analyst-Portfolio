@@ -2,7 +2,7 @@
 
 ## 1. Q1: Based on college location, what are the top 5 states for longest average career length?
 
-''' SELECT TOP 5 
+``` SELECT TOP 5 
 -- Select the first 5 results
 	State,
 	ROUND(AVG(Years_Played), 2) AS Career_Length 
@@ -17,4 +17,4 @@ GROUP BY
 ORDER BY
 	Career_Length DESC; 
 	-- Sort by longest Career_Length to shortest, top to bottom
-'''
+```
