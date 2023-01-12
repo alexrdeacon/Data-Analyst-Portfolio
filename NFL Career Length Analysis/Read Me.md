@@ -2,7 +2,7 @@
 
 ## 1. Q1: Based on college location, what are the top 5 states for longest average career length?
 
-``` ruby
+``` sql
 SELECT TOP 5 
 	State,
 	ROUND(AVG(Years_Played), 2) AS Career_Length 
