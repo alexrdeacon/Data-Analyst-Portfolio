@@ -1,45 +1,12 @@
-# Placeholdertitle
+# NFL Draft: How Different Variables Affect Career Length
 
-## 1. Based on college location, what are the top 5 states with at least 20 players drafted for longest average career length?
+Scenario: The NFL wants to identify where to concentrate scouting efforts in order to get players who will have long term careers. They want to see how different variables such as college, state of college, position, round drafted in etc. affects a players career length. 
 
-### Query:
+## 1. Round Selected In
 
-``` sql
-SELECT TOP 5 
--- Select the first 5 results
-	State,
-	ROUND(AVG(Years_Played), 2) AS Career_Length,
-	-- average career length
-	COUNT(State) AS Total_Players
-	-- amount of players drafted from each state
-FROM
-	NFL_Draft_Cleaned$
-WHERE
-	Years_Played IS NOT NULL 
-	-- exclude empty values in the Years_Played column
-GROUP BY
-	State
-	-- group the data by state
-HAVING
-	COUNT(State) > 20
-	-- include states with at least 20 players drafted
-ORDER BY
-	Career_Length DESC; 
-	-- Sort by longest Career_Length to shortest, top to bottom
-```
-### Results from query:
+How does the round a player is drafted in affect their career length in the 7 round draft era?
 
-|Rank|State|Career_Length|Total_Players|
-|---|---|---|---|
-|1| Massachusetts | 5.56 | 140
-|2| Colorado | 5.35 | 223
-|3| Pennsylvania | 5.17 | 481
-|4| Indiana | 5.16 | 208
-|5| New York |	5.14 | 127
-
-Based on the above table, on average, the best state to go to college from for the longest possible career is Massachusetts
-
-## 2. How does the round a player is drafted in affect their career length in the 7 round draft era?
+We will use **WHERE** to clean the data, limit draft year to the 7 round draft era and to only include players who are retired.
 
 ### Query:
 
@@ -78,9 +45,14 @@ ORDER BY
 | 6    | 6     | 3.75          |
 | 7    | 7     | 3.39          |
 
-Based on this table, on average, the best round to be drafted in for the longest possible career length is the 1st Round
+Based on the Query, on average the best round to be drafted in for the longest possible career length is the 1st Round which is almost 1.4 years longer than players drafted in the second round, and over 4 years longer than players drafted in the seventh round.
 
-## 3. Based on college location, what are the top 5 states for most 1st round players taken?
+
+## 2. College State Location
+
+Since we now know that being drafted in the first round gives you the longest career on average, what are the top 5 states in terms of amount of 1st rounders selected?
+
+We will use **WHERE** to only include players who were taken in the first round, **GROUP BY** to group the data by state and then round selected, and use **ORDER BY** to sort by first rounders taken, from most to least.
 
 ### Query:
  
@@ -116,62 +88,56 @@ ORDER BY
 | 4    | Alabama    | 1     | 95            | 6.49          |
 | 5    | Ohio       | 1     | 77            | 6.75          |
 
-To have the best chance to be taken in the first round, you should attend college in California
+To have the best chance to be taken in the first round, you should attend college in California.
 
-## 4. Of the top 10 colleges by players drafted, which ones have the longest average career length?
+Based on college location, what are the top 5 states with at least 20 players drafted from them in average career length?
+
+We will need to use **SELECT TOP** 5 to show the top 5 states, **WHERE** to clean the data, **GROUP BY** to combine data into states, **HAVING** to only include states with at least 20 players drafted and **ORDER BY** to sort the data from most to least career length.
 
 ### Query:
 
 ``` sql
---First we need to create a table of the top 10 colleges
-SELECT TOP 10 
--- select first 10 results
-	College,
-	COUNT(College) AS Players_Taken, 
-	-- count of each college, put into new column called "Players Taken"
-	ROUND(AVG(Years_Played), 2) AS Career_Length, 
-	-- average Years_Played in new column called "Career_Length"
-INTO
-	Top_10_Colleges_Total_Players_Taken 
-	-- Bring the statement into new table
+SELECT TOP 5 
+-- Select the first 5 results
+	State,
+	ROUND(AVG(Years_Played), 2) AS Career_Length,
+	-- average career length
+	COUNT(State) AS Total_Players
+	-- amount of players drafted from each state
 FROM
-	NFL_Draft_Cleaned$ 
-	-- Take statement from the table "NFL_Draft_Cleaned$"
+	NFL_Draft_Cleaned$
+WHERE
+	Years_Played IS NOT NULL 
+	-- exclude empty values in the Years_Played column
 GROUP BY
-	College 
-	-- Group results by college
+	State
+	-- group the data by state
+HAVING
+	COUNT(State) > 20
+	-- include states with at least 20 players drafted
 ORDER BY
-	Players_Taken DESC; 
-	-- Sort by amount of players taken, most to least top to bottom
---Now that a new table is created, we can sort the top 10 colleges by career length
-SELECT
-	*
-FROM
-	Top_10_Colleges_Total_Players_Taken
-ORDER BY
-	Career_Length DESC
+	Career_Length DESC; 
+	-- Sort by longest Career_Length to shortest, top to bottom
 ```
+### Results from query:
 
-### Results from Query:
+|Rank|State|Career_Length|Total_Players|
+|---|---|---|---|
+|1| Massachusetts | 5.56 | 140
+|2| Colorado | 5.35 | 223
+|3| Pennsylvania | 5.17 | 481
+|4| Indiana | 5.16 | 208
+|5| New York |	5.14 | 127
 
-| Rank | Coolege    | Players_Taken | Career_Length |
-|------|------------|---------------|---------------|
-| 1    | Miami (FL) | 284           | 5.49          |
-| 2    | USC        | 330           | 5.38          |
-| 3    | Penn St.   | 286           | 5.11          |
-| 4    | Notre Dame | 282           | 5.07          |
-| 5    | Florida    | 269           | 5             |
-| 6    | Michigan   | 272           | 4.89          |
-| 7    | Ohio St.   | 326           | 4.82          |
-| 8    | Nebraska   | 281           | 4.81          |
-| 9    | Alabama    | 264           | 4.64          |
-| 10   | Oklahoma   | 277           | 4.05          |
+Based on the above table, on average, the best state to go to college from for the longest possible career is Massachusetts with an average career length of 5.56 years.
 
-Of the top 10 colleges by players drafted, Miami (FL) is the best college to attend to get the longest career on average
- 
-## 5. If being in the first round gives you the longest average career, what is the average career by college and round?
+## 3. College Drafted From
 
-### Query:
+If being drafted in the first round gives you the longest average career, what is the average career by college and round?
+
+We will need to create a new table to query from. For this, we will use **SELECT TOP 10** to select the top 10 colleges, use **INTO** to bring the selected data from our original table into our new table, use **WHERE** to clean the data, limit draft year to the 7 round draft era and only include players drafted in the first round. We will use **GROUP BY** to group the data by Round and College, and **ORDER BY** to order the colleges by amount of first rounders taken and to make sure our **SELECT TOP 10** selecte the top 10 colleges.
+
+### Create Table
 
 ``` sql
 --Create a table of top 10 colleges by amount of 1st rounders taken
@@ -206,7 +172,13 @@ GROUP BY
 	College
 ORDER BY
 	Players_Taken DESC
---Now that table is created, we can do the analysis
+```
+
+Now that table is created, we can do the analysis
+
+### Query:
+
+``` sql
 SELECT
 	*
 FROM
@@ -230,4 +202,64 @@ ORDER BY
 | 9    | Alabama     | 1     | 6.3           | 20            |
 | 10   | Georgia     | 1     | 6.28          | 18            |
 
-For the best chance at getting taken in the first and having the longest possible career, players should go to Miami (FL)
+For the best chance at getting taken in the first round and having the longest possible career, players should attend Miami (FL)
+
+Of the top 10 colleges by players drafted, which ones have the longest average career length?
+
+We will need to create another table to query from. For this, we will use **SELECT TOP 10** to select the top 10 colleges, use **INTO** to bring the selected data from our original table into our new table. We will use **GROUP BY** to group the data by College, and **ORDER BY** to order the colleges by amount of players drafted and to make sure our **SELECT TOP 10** selects the top 10 colleges by players drafted from.
+
+
+### Create Table:
+
+``` sql
+--First we need to create a table of the top 10 colleges
+SELECT TOP 10 
+-- select first 10 results
+	College,
+	COUNT(College) AS Players_Taken, 
+	-- count of each college, put into new column called "Players Taken"
+	ROUND(AVG(Years_Played), 2) AS Career_Length, 
+	-- average Years_Played in new column called "Career_Length"
+INTO
+	Top_10_Colleges_Total_Players_Taken 
+	-- Bring the statement into new table
+FROM
+	NFL_Draft_Cleaned$ 
+	-- Take statement from the table "NFL_Draft_Cleaned$"
+GROUP BY
+	College 
+	-- Group results by college
+ORDER BY
+	Players_Taken DESC; 
+	-- Sort by amount of players taken, most to least top to bottom
+```
+
+Now that a new table is created, we can sort the top 10 colleges by career length
+
+### Query:
+
+```
+SELECT
+	*
+FROM
+	Top_10_Colleges_Total_Players_Taken
+ORDER BY
+	Career_Length DESC
+```
+
+### Results from Query:
+
+| Rank | Coolege    | Players_Taken | Career_Length |
+|------|------------|---------------|---------------|
+| 1    | Miami (FL) | 284           | 5.49          |
+| 2    | USC        | 330           | 5.38          |
+| 3    | Penn St.   | 286           | 5.11          |
+| 4    | Notre Dame | 282           | 5.07          |
+| 5    | Florida    | 269           | 5             |
+| 6    | Michigan   | 272           | 4.89          |
+| 7    | Ohio St.   | 326           | 4.82          |
+| 8    | Nebraska   | 281           | 4.81          |
+| 9    | Alabama    | 264           | 4.64          |
+| 10   | Oklahoma   | 277           | 4.05          |
+
+Of the top 10 colleges by players drafted, Miami (FL) again is the best college to attend to get the longest career on average no matter what round you are taken in.
