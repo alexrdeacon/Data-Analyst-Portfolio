@@ -4,9 +4,9 @@ Scenario: The NFL wants to identify where to concentrate scouting efforts in ord
 
 ## 1. Round Selected In
 
-How does the round a player is drafted in affect their career length in the 7 round draft era?
+How does the round a player is drafted in affect their career length in the 7 round draft era (1994-present)?
 
-We will use **WHERE** to clean the data, limit draft year to the 7 round draft era and to only include players who are retired.
+We will use **WHERE** to clean the data, limit draft year to the 7 round draft era, and exclude players who are currently active.
 
 ### Query:
 
@@ -50,9 +50,9 @@ Based on the Query, on average the best round to be drafted in for the longest p
 
 ## 2. College State Location
 
-Since we now know that being drafted in the first round gives you the longest career on average, what are the top 5 states in terms of amount of 1st rounders selected?
+Since we now know that being drafted in the first round leads to the longest average career, what are the top 5 states to attend college to increase chances of being a first round draft pick?
 
-We will use **WHERE** to only include players who were taken in the first round, **GROUP BY** to group the data by state and then round selected, and use **ORDER BY** to sort by first rounders taken, from most to least.
+We will use **WHERE** to only include players who were taken in the first round, **GROUP BY** to group the data first by state and then by round selected, and use **ORDER BY** to sort by first rounders taken, from most to least.
 
 ### Query:
  
