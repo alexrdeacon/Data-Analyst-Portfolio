@@ -1,5 +1,6 @@
 Testing code blocks
 
-  ```
-  hello
-  ```
+  SELECT
+    *
+  FROM
+    NFL
