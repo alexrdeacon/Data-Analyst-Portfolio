@@ -135,7 +135,7 @@ Based on the above table, on average, the best state to go to college from for t
 
 If being drafted in the first round gives you the longest average career, what is the average career by college and round?
 
-We will need to create a new table to query from. For this, we will use **SELECT TOP 10** to select the top 10 colleges, use **INTO** to bring the selected data from our original table into our new table, use **WHERE** to clean the data, limit draft year to the 7 round draft era and only include players drafted in the first round. We will use **GROUP BY** to group the data by Round and College, and **ORDER BY** to order the colleges by amount of first rounders taken and to make sure our **SELECT TOP 10** selecte the top 10 colleges.
+We will need to create a new table to query from. For this, we will use **SELECT TOP 10** to select the top 10 colleges from the query below: use **INTO** to bring the selected data from our original data set into our new table, use **WHERE** to clean the data for null values, limit draft year to the 7 round draft era and only include players drafted in the first round. We will use **GROUP BY** to group the data by Round and College, and **ORDER BY** to order the colleges by amount of first rounders taken and to make sure our **SELECT TOP 10** selecte the top 10 colleges.
 
 ### Create Table
 
