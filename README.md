@@ -6,10 +6,7 @@ Hello, I'm Alexander, but I go by Alex! I am a former freelancing video editor a
 This is a repository to showcase my skills in data analytics.
 
 ## Table of Contents
-*
-
-
-[NFL Career Length Analysis Project](https://github.com/alexrdeacon/Data-Analyst-Portfolio/tree/main/NFL%20Career%20Length%20Analysis)
-* [SQL Analysis](https://github.com/alexrdeacon/Data-Analyst-Portfolio/blob/main/NFL%20Career%20Length%20Analysis/SQL%20Analysis:%20NFL%20Draft%20Career%20Length.md)
-* [SQL Code](https://github.com/alexrdeacon/Data-Analyst-Portfolio/blob/main/NFL%20Career%20Length%20Analysis/NFL%20Career%20Length%20Analysis.sql)
-* [Tableau NFL Career Length Tracker Dashboard](https://public.tableau.com/app/profile/alex7268/viz/NFLCareerLengthTracker/NFLCareerLengthTracker)
+* [About](https://github.com/alexrdeacon/Data-Analyst-Portfolio#about)
+* Porfolio Projects
+  * [NFL Career Length Analysis](https://github.com/alexrdeacon/Data-Analyst-Portfolio/tree/main/NFL%20Career%20Length%20Analysis)
+* [Certificates](https://github.com/alexrdeacon/Data-Analyst-Portfolio#certificates)
