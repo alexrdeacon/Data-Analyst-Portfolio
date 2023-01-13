@@ -8,8 +8,8 @@ This is a repository to showcase my skills in data analytics.
 ## Table of Contents
 * [About](README.md#about)
 * Porfolio Projects
-  * [NFL Career Length Analysis](README.md#NFL_Career_Length_Analysis)
-* [Certificates](README.md#Certificates)
+  * [NFL Career Length Analysis](README.md#nfl_career_length_analysis)
+* [Certificates](README.md#certificates)
 
 ## Portfolio Projects
 In this section I will list my data analytics projects and briefly describe the way I analyzed, including programs and skills used.
