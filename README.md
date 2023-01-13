@@ -8,5 +8,18 @@ This is a repository to showcase my skills in data analytics.
 ## Table of Contents
 * [About](https://github.com/alexrdeacon/Data-Analyst-Portfolio#about)
 * Porfolio Projects
-  * [NFL Career Length Analysis](https://github.com/alexrdeacon/Data-Analyst-Portfolio/tree/main/NFL%20Career%20Length%20Analysis)
+  * [NFL Career Length Analysis](https://github.com/alexrdeacon/Data-Analyst-Portfolio#NFLCareerLengthAnalysis)
 * [Certificates](https://github.com/alexrdeacon/Data-Analyst-Portfolio#certificates)
+
+## Portfolio Projects
+In this section I will list my data analytics projects and briefly describe the way I analyzed, including programs and skills used.
+
+### [NFL Career Length Analysis](https://github.com/alexrdeacon/Data-Analyst-Portfolio/tree/main/NFL%20Career%20Length%20Analysis)
+
+**Code:** [SQL CODE](https://github.com/alexrdeacon/Data-Analyst-Portfolio/blob/main/NFL%20Career%20Length%20Analysis/NFL%20Career%20Length%20Analysis.sql)
+
+**Description:** The original dataset I found on [Kaggle](https://www.kaggle.com/datasets/cviaxmiwnptr/nfl-draft-19702021) contained 15774 records as of May 2021. The data includes 29 columns listing draft year, round, pick, player, postion, age, year retired, their career stats and the college they went to. The project includes the following steps: data cleaning and preprocessing, updating the dataset to the current year (end of 2022 NFL season) and EDA (exploratory data analysis). Using excel, I updated draft years from 2000 to present to get current updated stats, as well as adding 5 more columns of data using calculations and online research (Years_Played, Status, Team, State drafted from and State Abbreviation). You can read more about the cleaning process **here add link and new md file**. I then explored data with SQL and made an interactive dashboard with Tableau.
+
+**Skills:** data cleaning, data analysis, data visualization.
+
+**Technology:** Excel, SQL, Tableau
