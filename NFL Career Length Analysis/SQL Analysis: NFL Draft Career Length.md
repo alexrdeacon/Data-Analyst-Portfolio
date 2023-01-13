@@ -273,6 +273,8 @@ Of the top 10 colleges by players drafted, Miami (FL) again is the best college 
 
 ## Final Analysis:
 
+Based on the data from our analysis here are the recommended places to scout.
+
 ### NFL Scouts should focus their first round scouting to:
 
 * States
