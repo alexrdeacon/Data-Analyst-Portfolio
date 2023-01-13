@@ -6,10 +6,10 @@ Hello, I'm Alexander, but I go by Alex! I am a former freelancing video editor a
 This is a repository to showcase my skills in data analytics.
 
 ## Table of Contents
-* [About](https://github.com/alexrdeacon/Data-Analyst-Portfolio#about)
+* [About](README.md#about)
 * Porfolio Projects
-  * [NFL Career Length Analysis](https://github.com/alexrdeacon/Data-Analyst-Portfolio#NFLCareerLengthAnalysis)
-* [Certificates](https://github.com/alexrdeacon/Data-Analyst-Portfolio#certificates)
+  * [NFL Career Length Analysis](README.md#NFL_Career_Length_Analysis)
+* [Certificates](README.md#Certificates)
 
 ## Portfolio Projects
 In this section I will list my data analytics projects and briefly describe the way I analyzed, including programs and skills used.
@@ -23,3 +23,7 @@ In this section I will list my data analytics projects and briefly describe the 
 **Skills:** data cleaning, data analysis, data visualization.
 
 **Technology:** Excel, SQL, Tableau
+
+### Certificates
+
+* Google Data Analytics (Jan 2023)
