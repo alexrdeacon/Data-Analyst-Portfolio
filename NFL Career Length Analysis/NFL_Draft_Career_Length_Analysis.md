@@ -8,7 +8,7 @@ Scenario: The NFL wants to identify where to concentrate scouting efforts in ord
 	* [Query 1](NFL_Draft_Career_Length_Analysis.md#query-1)
 	* [Results from Query 1](NFL_Draft_Career_Length_Analysis.md#results-from-query-1)
 	* [Conclusion](NFL_Draft_Career_Length_Analysis.md#round-selected-in-conclusion)
-* [College State Location](SQL-Analysis-NFL-Draft-Career-Length.md#college-state-location)
+* [College State Location](SQL_Analysis_NFL_DraftCareer_Length.md#college-state-location)
 	* [Query 2](NFL_Draft_Career_Length_Analysis.md#query-2)
 	* [Results from Query 2](NFL_Draft_Career_Length_Analysis.md#results-from-query-2)
 	* [Query 3](NFL_Draft_Career_Length_Analysis.md#query-3)
@@ -22,13 +22,14 @@ Scenario: The NFL wants to identify where to concentrate scouting efforts in ord
 	* [Query 5](NFL_Draft_Career_Length_Analysis.md#query-5)
 	* [Results from Query 5](NFL_Draft_Career_Length_Analysis.md#results-from-query-5)
 	* [Conclusion](NFL_Draft_Career_Length_Analysis.md#college-drafted-from-conclusion)
-* [Position Played](SQL-Analysis-NFL-Draft-Career-Length.md#position-played)
+* [Position Played](SQL_Analysis_NFL_Draft-Career_Length.md#position-played)
 	* [Query 6](NFL_Draft_Career_Length_Analysis.md#query-6)
 	* [Results from Query 6](NFL_Draft_Career_Length_Analysis.md#results-from-query-6)
 	* [Query 7](NFL_Draft_Career_Length_Analysis.md#query-7)
 	* [Results from Query 7](NFL_Draft_Career_Length_Analysis.md#results-from-query-7)
 	* [Conclusion](NFL_Draft_Career_Length_Analysis.md#position-played-conclusion)
 * [Final Analysis](NFL_Draft_Career_Length_Analysis.md#final-analysis)
+
 ## Round Selected In
 
 How does the round a player is drafted in affect their career length in the 7 round draft era (1994-present)?
