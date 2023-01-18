@@ -4,7 +4,7 @@ Scenario: The NFL wants to identify where to concentrate scouting efforts in ord
 
 ## Table of Contents:
 
-* [Round Selected In](NFL-Draft-Career-Length-SQL-Analysis.md#Round-Selected-In)
+* [Round Selected In](NFL-Draft-Career-Length-SQL-Analysis.md#round-selected-in)
 * [2. College State Location](SQL-Analysis-NFL-Draft-Career-Length.md#College-State-Location)
 	* [NFL Career Length Analysis](INTRO.md#nfl-career-length-analysis)
 * [Certificates](INTRO.md#certificates)
