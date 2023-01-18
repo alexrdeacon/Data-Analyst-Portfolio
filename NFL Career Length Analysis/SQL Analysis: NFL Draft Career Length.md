@@ -75,7 +75,7 @@ GROUP BY
 	Round
 	--combine data by state and then round
 ORDER BY
-	Players_Taken DESC
+	Players_Taken DESC;
 	-- sort by amount of players taken, most to least
 ```
 
