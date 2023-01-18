@@ -209,7 +209,7 @@ ORDER BY
 
 For the best chance at getting taken in the first round and having the longest possible career, players should attend Miami (FL) which on average have a career .7 years longer than Texas.
 
-Of the top 10 colleges by total amoun of players drafted, which ones have the longest average career length?
+Of the top 10 colleges by total amount of players drafted, which ones have the longest average career length?
 
 We cannot acheive this analysis with our current dataset, so we will have to create a new table to query from. We will use **SELECT TOP 10** to select the first 10 results, use **INTO** to bring the data from our **SELECT** statement into a new table. We will use **GROUP BY** to group the data by College, and **ORDER BY** to order the colleges by amount of first rounders taken and to make sure our **SELECT TOP 10** select the top 10 colleges by players taken in the draft.
 
@@ -273,7 +273,101 @@ Of the top 10 colleges by players drafted, Miami (FL) again is the best college 
 
 ## 4. Position Played
 
-On average, which position has the longest career?
+We have round and college data, but we have no data on the numerous positions in the NFL. On average, which drafted position has the longest career?
+
+### QUERY:
+
+``` sql
+SELECT
+	Position,
+	ROUND(AVG(Years_Played), 2) AS Career_Length,
+	-- average career length
+	COUNT(Position) AS Players_Taken
+	-- amount of players taken
+FROM
+	NFL_Draft_Cleaned$
+WHERE
+	Years_Played IS NOT NULL 
+	-- exclude empty values in the Years_Played column
+	AND
+		Status = 'Retired'
+		-- only include players who are retired
+GROUP BY
+	Position
+ORDER BY
+	Career_Length DESC;
+	--sort by career length in descending order
+```
+
+### RESULTS FROM QUERY:
+
+| Rank | Position | Career_Length | Players_Taken |
+|------|----------|---------------|---------------|
+| 1    | K        | 6.71          | 106           |
+| 2    | P        | 6.51          | 105           |
+| 3    | QB       | 6.32          | 454           |
+| 4    | OL       | 5.63          | 1665          |
+| 5    | FB       | 5.4           | 81            |
+| 6    | DL       | 5.15          | 1677          |
+| 7    | TE       | 5.11          | 616           |
+| 8    | DB       | 4.86          | 1926          |
+| 9    | LB       | 4.8           | 1499          |
+| 10   | WR       | 4.39          | 1282          |
+| 11   | RB       | 4.19          | 1189          |
+| 12   | LS       | 2             | 2             |
+
+Of the 12 general positions in the NFL, the longest career length is Kicker, followed closely by Punter. For offense, the longest career is QB and the shortest is RB. For defense, the longest career is DL and the shortest is DB.
+
+We know that being drafted in the first round gives you the longest average career length. How many and what percentage of each position are taken in the first round?
+
+### QUERY:
+``` sql
+-- How many and what percentage of each position are taken in the first round?
+SELECT
+	Position,
+	ROUND(AVG(Years_Played), 2) AS Career_Length,
+	--avg career length
+	COUNT(Position) AS Players_Taken,
+	-- amount of players taken
+	CAST(ROUND(COUNT(*) * 100.0 / 
+		(SELECT 
+			COUNT(*) 
+		FROM 
+			NFL_Draft_Cleaned$
+		WHERE
+			Round = 1), 2) AS NUMERIC(36,2)) AS Percentage_of_First_Rounders_Selected
+			-- nested function to get percentage of first rounders selected
+FROM
+	NFL_Draft_Cleaned$
+WHERE
+	Round = 1
+	-- only include first rounders
+GROUP BY
+	Position
+ORDER BY
+	Career_Length DESC
+	-- order by career length
+```
+
+### QUERY RESULTS:
+
+| Rank | Position | Career_Length | Players_Taken | Percentage_of_First_Rounders_Selected |
+|------|----------|---------------|---------------|---------------------------------------|
+| 1    | P        | 10.5          | 2             | 0.12                                  |
+| 2    | K        | 10.33         | 3             | 0.19                                  |
+| 3    | QB       | 7.8           | 129           | 8.03                                  |
+| 4    | TE       | 7.74          | 59            | 3.67                                  |
+| 5    | OL       | 7.25          | 276           | 17.19                                 |
+| 6    | DB       | 7.2           | 251           | 15.63                                 |
+| 7    | DL       | 7.2           | 341           | 21.23                                 |
+| 8    | LB       | 7.05          | 175           | 10.90                                 |
+| 9    | FB       | 6.75          | 4             | 0.25                                  |
+| 10   | WR       | 6.6           | 187           | 11.64                                 |
+| 11   | RB       | 6.45          | 179           | 11.15                                 |
+
+Excluding the three ourliers (Punter, Kicker and Full Back) the position with the longest career is QB, which is over 1.3 years longer than the average first round RB, which comes in last. As expected, every postitions average career length increases when selected in the first round over the overall average career length for the respective position.
+
+**Conclusion:** With their 1st round pick, NFL teams should focus their first round scouting on any position of need as they will get a significantly longer career than the average player drafted in any other round. However, in the other rounds, NFL teams should focus their scouting on QB, OL and DL for the best ROI. RBs have the shortest career length regardless of round and excluding outliers.
 
 ## Final Analysis:
 
