@@ -9,7 +9,7 @@ Scenario: The NFL wants to identify where to concentrate scouting efforts in ord
 	* [NFL Career Length Analysis](INTRO.md#nfl-career-length-analysis)
 * [Certificates](INTRO.md#certificates)
 
-## Round Selected In
+## 1. Round Selected In
 
 How does the round a player is drafted in affect their career length in the 7 round draft era (1994-present)?
 
