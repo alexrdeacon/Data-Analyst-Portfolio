@@ -271,6 +271,10 @@ Of the top 10 colleges by players drafted, Miami (FL) again is the best college 
 
 **Conclusion:** With their 1st round pick, NFL teams should focus their scouting efforts to Miami (FL) followed cloesly by Texas, Ohio St. and Tennessee. Regardless of round, NFL teams should focus their scouting effors to Miami (FL), USC, Penn St., Notre Dame and Florida if they wish to get the longest possible career out of the player they draft.
 
+## 4. Position Played
+
+On average, which position has the longest career?
+
 ## Final Analysis:
 
 Based on the data from our analysis here are the recommended places to scout.
