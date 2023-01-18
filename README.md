@@ -1,7 +1,7 @@
 # Alexander Deacon Data Analyst Portfolio
 
 ## About
-Hello, I'm Alexander, but I go by Alex! I am a former freelancing video editor and graphic designer who has made the transition over to Data Analytics! I have a Bachelor of Arts degree in Media (University at Buffalo), majoring in production with a minor in sociology. After moving to a different state (NY to PA) I decided to take time to figure out what I truly wanted to do. I have used Excel to analyze data and always enjoyed doing it, but only recently found out you can have a career in it. After some soul searching I stumbled upon SQL, signed up for the Google Data Analytics course and never looked back! I regularly practice my skills with codewars problems, doing personal analytic projects with Tableau, Microsoft SQL Server Management studio and Excel/Google Sheets.
+Hello, I'm Alexander, but I go by Alex! I am a former freelancing video editor and graphic designer who has made the transition over to Data Analytics! I have a Bachelor of Arts degree in Media (University at Buffalo), majoring in production with a minor in sociology. After moving to a different state (NY to PA) I decided to take time to figure out what I truly wanted to do. I have used Excel to analyze data and always enjoyed doing it, but only recently found out you can have a career in it. After some soul searching I stumbled upon SQL, signed up for the Google Data Analytics course and never looked back! I regularly practice my skills with codewars problems, doing personal analytic projects with Tableau, Microsoft SQL Server Management studio and Excel/Google Sheets. You can connect with my at my [LinkedIn](https://www.linkedin.com/in/alexanderrdeacon/)
 
 This is a repository to showcase my skills in data analytics.
 
