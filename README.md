@@ -26,4 +26,4 @@ In this section I will list my data analytics projects and briefly describe the 
 
 ### Certificates
 
-* Google Data Analytics (Jan 2023)
+* [Google Data Analytics (Jan 2023)](https://www.credly.com/badges/b5524632-004c-431c-a443-048834d4f847/linked_in_profile)
