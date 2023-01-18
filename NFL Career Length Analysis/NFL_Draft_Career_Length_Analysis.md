@@ -4,7 +4,9 @@ Scenario: The NFL wants to identify where to concentrate scouting efforts in ord
 
 ## Table of Contents:
 
-* [Round Selected In](NFL_Draft_Career_Length_Analysis.md#round-selected-in) 
+* [Round Selected In](NFL_Draft_Career_Length_Analysis.md#round-selected-in)
+	* [Query 1](NFL_Draft_Career_Length_Analysis.md#query-1)
+	* [Conclusion](NFL_Draft_Career_Length_Analysis.md#round-selected-in-conclusion)
 * [2. College State Location](SQL-Analysis-NFL-Draft-Career-Length.md#College-State-Location)
 	* [NFL Career Length Analysis](INTRO.md#nfl-career-length-analysis)
 * [Certificates](INTRO.md#certificates)
@@ -15,7 +17,7 @@ How does the round a player is drafted in affect their career length in the 7 ro
 
 We will use **WHERE** to clean the data by removing _NULL_ values from the _Years_Played_ column, limit draft year to the 7 round draft era (1994-present), and exclude players who are currently active.
 
-### Query:
+### Query 1:
 
 ``` sql
 SELECT
@@ -40,7 +42,7 @@ ORDER BY
 	Career_Length DESC; 
 	-- Sort by longest Career_Length to shortest, top to bottom
 ```
-### Results from Query:
+### Results from Query 1:
 
 | Rank | Round | Career_Length |
 |------|-------|---------------|
@@ -54,10 +56,10 @@ ORDER BY
 
 Based on the Query, the best round to be drafted in for the longest possible career length is the 1st Round. Career length in the 1st round almost 1.4 years longer than players drafted in the 2nd round, and over 4 years longer than players drafted in the last round in the draft. The 2nd round is the next best round to be drafted in. The average career length is 1 year longer than the 3rd round.
 
-### Conclusion: 
+### Round Selected in Conclusion: 
 Being drafted in the 1st round gives you the longest average career length, and the 2nd round is close behind and well ahead of the other rounds. Teams will want to have as many 1st and 2nd round picks as possible and focus their scouting efforts to players projected to be drafted in those rounds.
 
-## 2. College State Location
+## College State Location
 
 Since we now know that being drafted in the first round leads to the longest average career, what are the top 5 states to attend college to increase chances of finding a 1st round level talent?
 
