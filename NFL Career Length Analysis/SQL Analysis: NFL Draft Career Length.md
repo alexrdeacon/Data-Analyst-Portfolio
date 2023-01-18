@@ -175,7 +175,7 @@ GROUP BY
 	College
 	-- combine data on Round and College
 ORDER BY
-	Players_Taken DESC
+	Players_Taken DESC;
 	-- sort by amount of players drafted, most to least
 ```
 
@@ -189,7 +189,7 @@ SELECT
 FROM
 	Top_10_Colleges_First_Rounders_Taken
 ORDER BY
-	Career_Length DESC
+	Career_Length DESC;
 ```
 
 ### Results from Query:
@@ -223,7 +223,7 @@ SELECT TOP 10
 	College,
 	COUNT(College) AS Players_Taken, 
 	-- count of each college, put into new column called "Players Taken"
-	ROUND(AVG(Years_Played), 2) AS Career_Length, 
+	ROUND(AVG(Years_Played), 2) AS Career_Length
 	-- average Years_Played in new column called "Career_Length"
 INTO
 	Top_10_Colleges_Total_Players_Taken 
@@ -249,7 +249,7 @@ SELECT
 FROM
 	Top_10_Colleges_Total_Players_Taken
 ORDER BY
-	Career_Length DESC
+	Career_Length DESC;
 ```
 
 ### Results from Query:
