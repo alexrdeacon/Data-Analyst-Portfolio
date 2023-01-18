@@ -164,7 +164,7 @@ Based on this query, the top 5 states to scout regardless of round to find the p
 ## College State Location Conculsion:
 If you have a 1st round draft pick, teams should focus their scouting efforts to colleges that are in the states of California, Florida and Texas. For other rounds, teams should focus their scouting efforts to Massachusetts, Colorado or Pennsylvania.
 
-## 3. College Drafted From
+## College Drafted From
 
 If being drafted in the 1st round gives you the longest average career, what are the top 10 colleges base on average career for 1st rounders?
 
@@ -302,7 +302,7 @@ Of the top 10 colleges by players drafted, Miami (FL) again is the best college 
 ## College Drafted From Conclusion 
 With their 1st round pick, NFL teams should focus their scouting efforts to Miami (FL) followed cloesly by Texas, Ohio St. and Tennessee. Regardless of round, NFL teams should focus their scouting effors to Miami (FL), USC, Penn St., Notre Dame and Florida if they wish to get the longest possible career out of the player they draft.
 
-## 4. Position Played
+## Position Played
 
 We have round and college data, but we have no data on the numerous positions in the NFL. On average, which drafted position has the longest career?
 
