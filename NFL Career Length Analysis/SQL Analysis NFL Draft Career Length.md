@@ -2,14 +2,14 @@
 
 Scenario: The NFL wants to identify where to concentrate scouting efforts in order to get players who will have long term careers. They want to see how different variables such as college, state of college, position, round drafted in etc. affects a players career length. 
 
-## ## Table of Contents:
+## Table of Contents:
 
-* [1. Round Selected In](SQL-Analysis-NFL-Draft-Career-Length.md#1.-Round-Selected-In)
+* [Round Selected In](SQL-Analysis-NFL-Draft-Career-Length.md#-Round-Selected-In)
 * [2. College State Location](SQL-Analysis-NFL-Draft-Career-Length.md#College-State-Location)
 	* [NFL Career Length Analysis](INTRO.md#nfl-career-length-analysis)
 * [Certificates](INTRO.md#certificates)
 
-## 1. Round Selected In
+## Round Selected In
 
 How does the round a player is drafted in affect their career length in the 7 round draft era (1994-present)?
 
