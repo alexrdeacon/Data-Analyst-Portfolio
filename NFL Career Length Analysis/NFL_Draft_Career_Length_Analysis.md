@@ -2,6 +2,8 @@
 
 Scenario: The NFL wants to identify where to concentrate scouting efforts in order to get players who will have long term careers. They want to see how different variables such as college, state of college, position, round drafted in etc. affects a players career length. 
 
+For a short summary of the pre-cleaning steps taken in Excel, click [here](CLEANING_NOTES.md#)
+
 ## Table of Contents:
 
 * [Round Selected In](NFL_Draft_Career_Length_Analysis.md#round-selected-in)
