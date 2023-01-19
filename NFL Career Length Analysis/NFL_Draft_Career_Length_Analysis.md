@@ -4,8 +4,8 @@ Scenario: The NFL wants to identify where to concentrate scouting efforts in ord
 
 Unless otherwise stated, the analysis includes only players who have retired. We don't want to include players who have not retired as their careers are not over yet, and would influence the career length averages to be shorter based on including rookies and other players who have been in the league a short time but may play long careers.
 
-_For a short summary of the pre-cleaning steps taken in Excel, click [here](CLEANING_NOTES.md#).
-_
+For a short summary of the pre-cleaning steps taken in Excel, click [here](CLEANING_NOTES.md#).
+
 
 ## Table of Contents:
 
