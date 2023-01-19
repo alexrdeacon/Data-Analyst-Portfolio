@@ -321,6 +321,8 @@ Positions have been changed, combined and updated within excel before importing 
 
 We have round and college data, but we have no data on the numerous positions in the NFL. On average, which drafted position has the longest career when not drafted in the first round?
 
+We will use **SELECT** to pick position, career_length and players taken, **WHERE** to only include players who were taken in the first round and players who are **RETIRED**, **GROUP BY** to group the data by position, and use **ORDER BY** to sory by career length in descending order.
+
 ### Query 6:
 
 ``` sql
@@ -333,9 +335,6 @@ SELECT
 FROM
 	NFL_Draft_Cleaned$
 WHERE
-	Years_Played IS NOT NULL 
-	-- exclude empty values in the Years_Played column
-	AND
 		Status = 'Retired'
 		-- only include players who are retired
 	AND
@@ -368,9 +367,10 @@ Of the 12 general positions in the NFL, the longest career length is Kicker, fol
 
 We know that being drafted in the first round gives you the longest average career length. How many, and what percentage of each position are taken in the first round? How long is their average career? This will include players who are active.
 
+We will use **SELECT** to pick position, career_length and players taken, a **NESTED FUNCTION** using **CAST** in order to get the percentage of total players taken by position, **WHERE** to only include players who were taken in the first round and players who are **RETIRED**, **GROUP BY** to group the data by position, and use **ORDER BY** to sory by career length in descending order.
+
 ### Query 7:
 ``` sql
--- How many and what percentage of each position are taken in the first round?
 SELECT
 	Position,
 	ROUND(AVG(Years_Played), 2) AS Career_Length,
@@ -388,8 +388,10 @@ SELECT
 FROM
 	NFL_Draft_Cleaned$
 WHERE
-	Round = 1
-	-- only include first rounders
+		Round = 1
+		-- only include first rounders
+	AND
+		Status = 'Retired'
 GROUP BY
 	Position
 ORDER BY
@@ -403,15 +405,15 @@ ORDER BY
 |------|----------|---------------|---------------|---------------------------------------|
 | 1    | P        | 10.5          | 2             | 0.12                                  |
 | 2    | K        | 10.33         | 3             | 0.19                                  |
-| 3    | QB       | 7.8           | 129           | 8.03                                  |
-| 4    | TE       | 7.74          | 59            | 3.67                                  |
-| 5    | OL       | 7.25          | 276           | 17.19                                 |
-| 6    | DB       | 7.2           | 251           | 15.63                                 |
-| 7    | DL       | 7.2           | 341           | 21.23                                 |
-| 8    | LB       | 7.05          | 175           | 10.90                                 |
-| 9    | FB       | 6.75          | 4             | 0.25                                  |
-| 10   | WR       | 6.6           | 187           | 11.64                                 |
-| 11   | RB       | 6.45          | 179           | 11.15                                 |
+| 3    | QB       | 8.52          | 97            | 6.04                                  |
+| 4    | TE       | 8.14          | 50            | 3.11                                  |
+| 5    | OL       | 7.91          | 220           | 13.70                                 |
+| 6    | DB       | 7.8           | 204           | 12.70                                 |
+| 7    | LB       | 7.69          | 144           | 8.97                                  |
+| 8    | DL       | 7.62          | 279           | 17.37                                 |
+| 9    | WR       | 7.12          | 150           | 9.34                                  |
+| 10   | FB       | 6.75          | 4             | 0.25                                  |
+| 11   | RB       | 6.6           | 167           | 10.40                                 |
 
 Excluding the three positions with an insignificant amount of players taken (Punter, Kicker and Full Back) the position with the longest career is QB, which is over 1.3 years longer than the average first round RB, which comes in last. As expected, every postitions average career length increases when selected in the first round over the overall average career length for the respective position.
 
@@ -448,6 +450,6 @@ With their 1st round pick, NFL teams should focus their first round scouting on 
 
 ### What positions should NFL teams scout?
 
-Ever NFL team's needs will be different based on roster composition so NFL teams should scout based on positional need. To get the best bang for their buck in terms of career length, teams should scout in the first round and take the player they need most there as they last on average over two years longer than any other round.  
+Ever NFL team's needs will be different based on roster composition so NFL teams should scout based on positional need. To get the best bang for their buck in terms of career length, teams should scout in the first round and take the player they need most there as they last on average over three years longer than any other round.  
 
 **Future questions to answer and other things to consider:** Does contract structure play a role in average career length? Do NFL teams give players drafted higher more chances than lower drafted players? What is the average career length for undrafted players?
