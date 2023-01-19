@@ -2,7 +2,9 @@
 
 Scenario: The NFL wants to identify where to concentrate scouting efforts in order to get players who will have long term careers. They want to see how different variables such as college, state of college, position, round drafted in etc. affects a players career length. 
 
-For a short summary of the pre-cleaning steps taken in Excel, click [here](CLEANING_NOTES.md#)
+For a short summary of the pre-cleaning steps taken in Excel, click [here](CLEANING_NOTES.md#).
+
+Unless otherwise stated, the analysis includes only players who have retired. We don't want to include players who have not retired as their careers are not over yet, and would influence the career length averages to be shorter based on including rookies and other players who have been in the league a short time but may play long careers.
 
 ## Table of Contents:
 
@@ -88,19 +90,22 @@ We will use **SELECT TOP 5** to select the first 5 results in the query, **WHERE
 ### Query 2:
  
 ``` sql
-SELECT TOP 5 
 -- Select first 5 results
 	State,
 	Round,
-	COUNT(Round) AS Players_Taken, 
-	-- amount of players taken
-	ROUND(AVG(Years_Played), 2) AS Career_Length 
+	ROUND(AVG(Years_Played), 2) AS Career_Length,
 	-- average career length
+	COUNT(Round) AS Players_Taken
+	-- amount of players taken
+
 FROM
 	NFL_Draft_Cleaned$
 WHERE
 	Round = 1 
 	-- only include players who were taken in the 1st round
+	AND
+			Status = 'Retired' 
+			-- only include 'Retired' players
 GROUP BY
 	State,
 	Round
@@ -112,13 +117,13 @@ ORDER BY
 
 ### Results from Query 2:
 
-| Rank | State      | Round | Players_Taken | Career_Length |
+| Rank | State      | Round | Career_Length | Players_Taken |
 |------|------------|-------|---------------|---------------|
-| 1    | California | 1     | 197           | 8             |
-| 2    | Florida    | 1     | 171           | 7.62          |
-| 3    | Texas      | 1     | 126           | 6.54          |
-| 4    | Alabama    | 1     | 95            | 6.49          |
-| 5    | Ohio       | 1     | 77            | 6.75          |
+| 1    | California | 1     | 8.26          | 168           |
+| 2    | Florida    | 1     | 8.1           | 146           |
+| 3    | Texas      | 1     | 6.69          | 108           |
+| 4    | Alabama    | 1     | 7.65          | 66            |
+| 5    | Ohio       | 1     | 7.47          | 60            |
 
 Based on this query, the state to scout for the best chance of finding 1st round level talent is California, followed closely by Florida.
 
@@ -141,6 +146,9 @@ FROM
 WHERE
 	Years_Played IS NOT NULL 
 	-- exclude empty values in the Years_Played column
+	AND
+			Status = 'Retired' 
+			-- only include 'Retired' players
 GROUP BY
 	State
 	-- group the data by state
@@ -149,17 +157,16 @@ HAVING
 	-- include states with at least 20 players drafted
 ORDER BY
 	Career_Length DESC; 
-	-- Sort by longest Career_Length to shortest, top to bottom
 ```
 ### Results from Query 3:
 
-|Rank|State|Career_Length|Total_Players|
-|---|---|---|---|
-|1| Massachusetts | 5.56 | 140
-|2| Colorado | 5.35 | 223
-|3| Pennsylvania | 5.17 | 481
-|4| Indiana | 5.16 | 208
-|5| New York |	5.14 | 127
+| Rank | State         | Career_Length | Players_Taken |
+|------|---------------|---------------|---------------|
+| 1    | Massachusetts | 5.77          | 122           |
+| 2    | Pennsylvania  | 5.43          | 416           |
+| 3    | Colorado      | 5.35          | 213           |
+| 4    | Iowa          | 5.3           | 170           |
+| 5    | Indiana       | 5.29          | 189           |
 
 Based on this query, the top 5 states to scout regardless of round to find the players with the longest average career length are Massachusetts, Colorado, Pennsylvania, Indiana and New York.
 
@@ -263,6 +270,9 @@ INTO
 FROM
 	NFL_Draft_Cleaned$ 
 	-- Take statement from the table "NFL_Draft_Cleaned$"
+WHERE
+	Status = 'Retired' 
+	-- only include 'Retired' players
 GROUP BY
 	College 
 	-- Group results by college
@@ -286,18 +296,18 @@ ORDER BY
 
 ### Results from Query 5:
 
-| Rank | Coolege    | Players_Taken | Career_Length |
-|------|------------|---------------|---------------|
-| 1    | Miami (FL) | 284           | 5.49          |
-| 2    | USC        | 330           | 5.38          |
-| 3    | Penn St.   | 286           | 5.11          |
-| 4    | Notre Dame | 282           | 5.07          |
-| 5    | Florida    | 269           | 5             |
-| 6    | Michigan   | 272           | 4.89          |
-| 7    | Ohio St.   | 326           | 4.82          |
-| 8    | Nebraska   | 281           | 4.81          |
-| 9    | Alabama    | 264           | 4.64          |
-| 10   | Oklahoma   | 277           | 4.05          |
+| Rank | College     | Career_Length | Players_Taken |
+|------|-------------|---------------|---------------|
+| 1    | Miami (FL)  | 5.6           | 211           |
+| 2    | USC         | 5.52          | 262           |
+| 3    | Penn St.    | 5.43          | 207           |
+| 4    | Notre Dame  | 5.31          | 203           |
+| 5    | Florida     | 5.23          | 183           |
+| 6    | Ohio St.    | 5.12          | 219           |
+| 7    | Florida St. | 5.11          | 185           |
+| 8    | Michigan    | 5.07          | 180           |
+| 9    | Nebraska    | 4.8           | 193           |
+| 10   | Oklahoma    | 4.17          | 183           |
 
 Of the top 10 colleges by players drafted, Miami (FL) again is the best college to attend to get the longest career on average no matter what round you are taken in.
 
@@ -305,6 +315,8 @@ Of the top 10 colleges by players drafted, Miami (FL) again is the best college 
 With their 1st round pick, NFL teams should focus their scouting efforts to Miami (FL) followed cloesly by Texas, Ohio St. and Tennessee. Regardless of round, NFL teams should focus their scouting effors to Miami (FL), USC, Penn St., Notre Dame and Florida if they wish to get the longest possible career out of the player they draft.
 
 ## Position Played
+
+Positions have been changed, combined and updated within excel before importing to SQL server management studio. Refer to cleaning notes [here](CLEANING_NOTES.md#) for a short summary of changes.
 
 We have round and college data, but we have no data on the numerous positions in the NFL. On average, which drafted position has the longest career?
 
@@ -351,7 +363,7 @@ ORDER BY
 
 Of the 12 general positions in the NFL, the longest career length is Kicker, followed closely by Punter. For offense, the longest career is QB and the shortest is RB. For defense, the longest career is DL and the shortest is DB.
 
-We know that being drafted in the first round gives you the longest average career length. How many and what percentage of each position are taken in the first round?
+We know that being drafted in the first round gives you the longest average career length. How many and what percentage of each position are taken in the first round? This will include players who are active.
 
 ### Query 7:
 ``` sql
@@ -398,55 +410,38 @@ ORDER BY
 | 10   | WR       | 6.6           | 187           | 11.64                                 |
 | 11   | RB       | 6.45          | 179           | 11.15                                 |
 
-Excluding the three ourliers (Punter, Kicker and Full Back) the position with the longest career is QB, which is over 1.3 years longer than the average first round RB, which comes in last. As expected, every postitions average career length increases when selected in the first round over the overall average career length for the respective position.
+Excluding the three positions with an insignificant amount of players taken (Punter, Kicker and Full Back) the position with the longest career is QB, which is over 1.3 years longer than the average first round RB, which comes in last. As expected, every postitions average career length increases when selected in the first round over the overall average career length for the respective position.
 
 ## Position Played Conclusion 
 With their 1st round pick, NFL teams should focus their first round scouting on any position of need as they will get a significantly longer career than the average player drafted in any other round. However, in the other rounds, NFL teams should focus their scouting on QB, OL and DL for the best ROI. RBs have the shortest career length regardless of round and excluding outliers.
 
 ## Final Analysis:
 
-Based on the data from our analysis here are the recommended places to scout.
+## Where NFL scouts should focus their scouting based on States:
 
-### NFL Scouts should focus their first round scouting to:
+| 1st Round Scouting | Any Round Scouting |
+|--------------------|--------------------|
+| California         | Massachusetts      |
+| Florida            | Colorado           |
+| Texas              | Pennsylvania       |
+| Alabama            | Indiana            |
+| Ohio               | New York           |
 
-* States
-	* California
-	* Florida
-	* Texas
-	* Alabama
-	* Ohio
 
-* Colleges
-	* Miami (FL)
-	* Texas
-	* Ohio St.
-	* Tennesee
-	* USC
-	* Florida
-	* Florida St.
-	* LSU
-	* Alabama
-	* Georgia
+### Where NFL scounts should focus their scouting based on College:
 
-### Regardless of round, NFL scouts should focus their scouting to:
+| 1st Round Scouting | Any Round Scouting |
+|--------------------|--------------------|
+| Miami (FL)         | Miami (FL)         |
+| Texas              | USC                |
+| Ohio St.           | Penn St.           |
+| Tennessee          | Notre Dame         |
+| USC                | Florida            |
+| Florida            | Michigan           |
+| Florida St.        | Ohio St.           |
+| LSU                | Nebraska           |
+| Alabama            | Alabama            |
+| Georgia            | Oklahoma           |
 
-* States
-	* Massachusetts
-	* Colorado
-	* Pennsylvania
-	* Idiana
-	* New York
-
-* Colleges
-	* Miami (FL)
-	* USC
-	* Penn St.
-	* Notre Dame
-	* Florida
-	* Michigan
-	* Ohio St.
-	* Nebraska
-	* Alabama
-	* Oklahoma
 
 **Future questions to answer and other things to consider:** What is the average career by position? Which state/college has the longest average career for each individual position? Does contract structure play a role in average career length? Do NFL teams give players drafted higher more chances than lower drafted players? What is the average career length for undrafted players?
