@@ -444,4 +444,4 @@ With their 1st round pick, NFL teams should focus their first round scouting on 
 | Georgia            | Oklahoma           |
 
 
-**Future questions to answer and other things to consider:** What is the average career by position? Which state/college has the longest average career for each individual position? Does contract structure play a role in average career length? Do NFL teams give players drafted higher more chances than lower drafted players? What is the average career length for undrafted players?
+**Future questions to answer and other things to consider:** Does contract structure play a role in average career length? Do NFL teams give players drafted higher more chances than lower drafted players? What is the average career length for undrafted players?
