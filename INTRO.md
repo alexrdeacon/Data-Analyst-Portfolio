@@ -14,7 +14,7 @@ This is a repository to showcase my skills in data analytics.
 ## Portfolio Projects
 In this section I will list my data analytics projects and briefly describe the way I analyzed, including programs and skills used.
 
-### [NFL Career Length Analysis]([NFL_Draft_Career_Length_Analysis.md#](https://github.com/alexrdeacon/Data-Analyst-Portfolio/blob/main/NFL%20Career%20Length%20Analysis/NFL_Draft_Career_Length_Analysis.md))
+### [NFL Career Length Analysis]([NFL_Draft_Career_Length_Analysis.md#](https://github.com/alexrdeacon/Data-Analyst-Portfolio/blob/main/NFL%20Career%20Length%20Analysis/NFL_Draft_Career_Length_Analysis.md)
 
 **Code:** [SQL CODE](https://github.com/alexrdeacon/Data-Analyst-Portfolio/blob/main/NFL%20Career%20Length%20Analysis/NFL%20Career%20Length%20Analysis.sql)
 
