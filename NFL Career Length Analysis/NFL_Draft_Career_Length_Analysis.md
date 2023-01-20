@@ -2,7 +2,7 @@
 
 Scenario: The NFL wants to identify where to concentrate scouting efforts in order to get players who will have long term careers. They want to see how different variables such as college, state of college, position, round drafted in etc. affects a players career length. 
 
-Unless otherwise stated, the analysis includes only players who have retired. We don't want to include players who have not retired as their careers are not over yet, and would influence the career length averages to be shorter based on including rookies and other players who have been in the league a short time but may play long careers.
+Unless otherwise stated, the analysis does not include active players. We don't want to include players who have not retired as their careers are not over yet, and would influence the career length averages to be shorter since it would include rookies who have 1 year of experience so far. The NFL has changed the amount of rounds in the draft a total of 3 times before settling at 7 rounds in 1994.
 
 For a short summary of the pre-cleaning steps taken in Excel, click [here](CLEANING_NOTES.md#).
 
@@ -37,9 +37,9 @@ For a short summary of the pre-cleaning steps taken in Excel, click [here](CLEAN
 
 ## Round Selected In
 
-How does the round a player is drafted in affect their career length in the 7 round draft era (1994-present)?
+How does the round a player is drafted in affect their career length in the first 7 round all time?
 
-We will use **WHERE** to limit draft year to the 7 round draft era (1994-present), and exclude players who are currently active.
+We will use **WHERE** to limit analysis to rounds 1-7, and to exclude players who are currently active. We will **GROUP BY** _Round_ and **ORDER BY** _Career_Length_ from longest career to shortest.
 
 ### Query 1:
 
@@ -51,8 +51,8 @@ SELECT
 FROM
 	NFL_Draft_Cleaned$
 WHERE
-	Draft_Year >= 1994 
-	-- only include players drafted in 7 round era (1994-Present)
+	Round <= 7
+	-- only include players drafted in rounds 1-7
 		AND
 			Status <> 'Active' 
 			-- exclude active players
@@ -61,30 +61,31 @@ GROUP BY
 	-- Group Career_Length by round
 ORDER BY
 	Career_Length DESC; 
-	-- Sort by longest Career_Length to shortest, top to bottom
+	-- Sort by longest Career_Length to shortest
 ```
 ### Results from Query 1:
 
-| Rank | Round | Career_Length |
-|:----:|:-----:|:-------------:|
-|   1  |   1   |      8.46     |
-|   2  |   2   |      6.95     |
-|   3  |   3   |      5.74     |
-|   4  |   4   |      5.04     |
-|   5  |   5   |      4.2      |
-|   6  |   6   |      3.55     |
-|   7  |   7   |      3.04     |
+| Round | Career_Length |
+|:-----:|:-------------:|
+|   1   |      8.56     |
+|   2   |      6.93     |
+|   3   |      5.85     |
+|   4   |      5.07     |
+|   5   |      4.25     |
+|   6   |      3.61     |
+|   7   |      3.08     |
 
-Based on the Query, the best round to be drafted in for the longest possible career length is the 1st Round. Career length in the 1st round over 1.5 years longer than players drafted in the 2nd round, and over 5.4 years longer than players drafted in the last round in the draft.
+Based on the Query, the best round to be drafted in for the longest possible career length is the 1st Round. Career length in the 1st round is over 1.5 years longer than players drafted in the 2nd round, and over 5.4 years longer than players drafted in the last round in the draft (7th).
 
 ### Round Selected in Conclusion: 
-Being drafted in the 1st round gives you the longest average career length. Their careers last 1.5 years longer than 2nd rounders, which last 1.2 years longer than third 3rd rounders. Teams will want to have as many 1st and 2nd round picks as possible, as career length drops off steeply after the 2nd round.
+Being drafted in the 1st round gives you the longest average career length. Teams will want to have as many 1st and 2nd round picks as possible, as career length drops off steeply after the 2nd round.
 
 ## College State Location
 
 Since we now know that being drafted in the 1st round leads to the longest average career, what are the top 10 states to attend college to increase chances of finding a 1st round level talent? Out of those colleges, which has the longest career length?
 
-We will use **SELECT TOP 5** to select the first 5 results in the query, **WHERE** to only include players who were taken in the first round, **GROUP BY** to group the data first by state and then by round selected, and use **ORDER BY** to sort by first rounders taken, from most to least. Using **ORDER BY** in this way will make sure the first 5 results are the states with the most 1st round draft picks all time.
+We will use **SELECT TOP 10** to select the first 10 results in the query, **WHERE** to only include players who were taken in the first round, **GROUP BY** to group the data first by state and then by round selected, and use **ORDER BY** to sort by first rounders taken, from most to least. Using **ORDER BY** in this way will make sure the first 10 results are the states with the most 1st round draft picks all time.
+
 ### Query 2:
  
 ``` sql
@@ -129,7 +130,7 @@ Based on this query, the state to scout for the best chance of finding 1st round
 
 Outside of the first round, what are the top 10 states in average career length?
 
-We will use **SELECT TOP 10** to select the first 10 results in the query, **GROUP BY** to combine data into states and **ORDER BY** to sort the data from longest to shortest average career length.
+We will use **SELECT TOP 10** to select the first 10 results in the query, **WHERE** to exclude 1st rounders,  **GROUP BY** to combine data into states and **ORDER BY** to sort the data from longest to shortest career.
 
 ### Query 3:
 
@@ -180,7 +181,7 @@ If you have a 1st round draft pick, teams should focus their scouting efforts to
 
 If being drafted in the 1st round gives you the longest average career, what are the top 10 colleges base on average career for 1st rounders?
 
-We cannot acheive this analysis with our current dataset, so we will have to create a new table to query from. We will use **SELECT TOP 10** to select the first 10 results, use **INTO** to bring the data from our **SELECT** statement into a new table, use **WHERE** to clean the data by removing _NULL_ values from the _Years_Played_ column, limit draft year to the 7 round draft era and only and include players drafted in the 1st round. We will use **GROUP BY** to group the data by Round and College, and **ORDER BY** to order the colleges by amount of first rounders taken and to make sure our **SELECT TOP 10** select the top 10 colleges by players taken in the 1st round of the draft.
+We cannot acheive this analysis with our current dataset, so we will have to create a new table to query from. We will use **SELECT TOP 10** to select the first 10 results, use **INTO** to bring the data from our **SELECT** statement into a new table and use **WHERE** to only and include players drafted in the 1st round. We will use **GROUP BY** to group the data by Round and College, and **ORDER BY** to order the colleges by amount of first rounders taken and to make sure our **SELECT TOP 10** select the top 10 colleges by players taken in the 1st round of the draft.
 
 ### Create Table 1
 
@@ -247,7 +248,7 @@ For the best chance at getting taken in the first round and having the longest p
 
 Of the top 10 colleges by total amount of players drafted, which ones have the longest average career length for non first rounders?
 
-We cannot acheive this analysis with our current dataset, so we will have to create a new table to query from. We will use **SELECT TOP 10** to select the first 10 results, use **INTO** to bring the data from our **SELECT** statement into a new table. We will use **GROUP BY** to group the data by College, and **ORDER BY** to order the colleges by amount of first rounders taken and to make sure our **SELECT TOP 10** select the top 10 colleges by players taken in the draft.
+We cannot acheive this analysis with our current dataset, so we will have to create a new table to query from. We will use **SELECT TOP 10** to select the first 10 results, use **INTO** to bring the data from our **SELECT** statement into a new table and **WHERE** to exclude 1st rounders. We will use **GROUP BY** to group the data by College, and **ORDER BY** to order the colleges by amount of first rounders taken and to make sure our **SELECT TOP 10** select the top 10 colleges by players taken in the draft.
 
 
 ### Create Table 2:
