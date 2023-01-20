@@ -419,29 +419,30 @@ With their 1st round pick, NFL teams should focus their first round scouting on 
 
 ## Where NFL scouts should focus their scouting based on States:
 
-| 1st Round Scouting | Any Round Scouting |
-|--------------------|--------------------|
-| California         | Massachusetts      |
-| Florida            | Colorado           |
-| Texas              | Pennsylvania       |
-| Alabama            | Indiana            |
-| Ohio               | New York           |
+| Rank | 1st Round Scouting | All Other Rounds |
+|:----:|:------------------:|:----------------:|
+|   1  |     California     |   Massachusetts  |
+|   2  |       Florida      |   Pennsylvania   |
+|   3  |        Texas       |     Colorado     |
+|   4  |       Alabama      |      Indiana     |
+|   5  |        Ohio        |       Iowa       |
 
 
 ### Where NFL scouts should focus their scouting based on College:
 
-| 1st Round Scouting | Any Round Scouting |
-|--------------------|--------------------|
-| Miami (FL)         | Miami (FL)         |
-| Texas              | USC                |
-| Ohio St.           | Penn St.           |
-| Tennessee          | Notre Dame         |
-| USC                | Florida            |
-| Florida            | Michigan           |
-| Florida St.        | Ohio St.           |
-| LSU                | Nebraska           |
-| Alabama            | Alabama            |
-| Georgia            | Oklahoma           |
+| Rank | 1st Round Scouting | All Other Rounds |
+|:----:|:------------------:|:----------------:|
+|   1  |     Miami (FL)     |     Penn St.     |
+|   2  |         USC        |    Notre Dame    |
+|   3  |       Florida      |        USC       |
+|   4  |        Texas       |     Nebraska     |
+|   5  |      Tennessee     |    Florida St.   |
+|   6  |     Florida St.    |      Florida     |
+|   7  |       Alabama      |     Michigan     |
+|   8  |     Notre Dame     |    Miami (FL)    |
+|   9  |      Ohio St.      |     Ohio St.     |
+|  10  |      Penn St.      |     Oklahoma     |
+
 
 ### What positions should NFL teams scout?
 
