@@ -453,7 +453,7 @@ With their 1st round pick, NFL teams should focus their scouting on the position
 |   9  |      Ohio St.      |          Nebraska         |
 |  10  |      Penn St.      |          Oklahoma         |
 
-### What positions should NFL teams scout?
+### Should NFL scouts focus their scouting by position?
 
 Ever NFL team's needs will be different based on roster composition so NFL teams should scout based on positional need. Since players in the 1st round have on average a career three years longer than other rounds, teams should focus more on the state and college the player attended than position they play. Players should be drafter by position as needed by the team, and could potentially focus on having more 1st round picks (teams can trade players/picks prior to drafting).
 
