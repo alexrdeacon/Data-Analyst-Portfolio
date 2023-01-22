@@ -37,7 +37,7 @@ For a short summary of the pre-cleaning steps taken in Excel, click [here](CLEAN
 
 ## Round Selected In
 
-How does the round a player is drafted in affect their career length in the first 7 round all time?
+How does the round a player is drafted in affect their career length?
 
 We will use **WHERE** to limit analysis to rounds 1-7, and to exclude players who are currently active. We will **GROUP BY** _Round_ and **ORDER BY** _Career_Length_ from longest career to shortest.
 
