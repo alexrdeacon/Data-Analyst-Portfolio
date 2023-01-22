@@ -318,7 +318,7 @@ With their 1st round pick, NFL teams should focus their scouting efforts to Miam
 
 Refer to cleaning notes [here](CLEANING_NOTES.md#) for a short summary of how positions were organized prior to analysis.
 
-We have information on how round drafted in and college/state attended affects career length, but we have no data on the numerous positions in the NFL. We know that being drafted in the first round gives you the longest average career length. How many, and what percentage of each position are taken in the first round? How long is their average career? This will include players who are active.
+We have information on how round drafted  and college/state attended affects career length, but we have no data on the numerous positions in the NFL. We know that being drafted in the 1st round gives you the longest average career length. How many, and what percentage of each position are taken in the 1st round? How long is their average career? 
 
 We will use **SELECT** to pick position, career_length and players taken, a **NESTED FUNCTION** using **CAST** in order to get the percentage of total players taken by position, **WHERE** to only include players who were taken in the first round and players who are **RETIRED**, **GROUP BY** to group the data by position, and use **ORDER BY** to sory by career length in descending order.
 
@@ -368,9 +368,9 @@ ORDER BY
 |  10  |    FB    |      7.75     |       4       |                  0.25                 |
 |  11  |    RB    |      7.6      |      167      |                 10.40                 |
 
-Excluding the three positions with an insignificant amount of players taken (Punter, Kicker and Full Back) the position with the longest career is QB, which is over 1.9 years longer than the average first round RB, which comes in last. As expected, every postitions average career length increases when selected in the first round over the overall average career length for the respective position. 
+Excluding the three positions from the above table with an insignificant amount of players taken (Punter, Kicker and Full Back), the position with the longest career is QB. There is nearly a two year difference between QB and the shortest length career of RB. If we look at the number of players taken for each position, there is not a correlation between career length and players taken. This may be due to the fact that there are different numbers of players needed to start for every position. For example, teams only need one starting QB but 5 starting OL and 3-4 starting DL. Therefore, more QBs and OLs were drafted in the first round, despite their average career length being slightly less than a QBs.
 
-On average, which drafted position has the longest career when not drafted in the first round?
+On average, which drafted position has the longest career when not drafted in the 1st round?
 
 We will use **SELECT** to pick position, career_length and players taken, **WHERE** to only include players who were taken in the first round and players who are **RETIRED**, **GROUP BY** to group the data by position, and use **ORDER BY** to sory by career length in descending order.
 
@@ -386,10 +386,11 @@ SELECT
 FROM
 	NFL_Draft_Cleaned$
 WHERE
-		Status = 'Retired'
-		-- only include players who are retired
+	Status <> 'Active'
+	-- only include players who are retired
 	AND
 		Round <> 1	
+		-- only include players not drafted in the first round
 GROUP BY
 	Position
 ORDER BY
@@ -414,10 +415,10 @@ ORDER BY
 |  11  |    RB    |      3.13     |      1523     |
 |  12  |    LS    |      1.5      |       4       |
 
-Of the 12 general positions in the NFL, the longest career length is FB, followed closely by P.
+Of the 12 general positions in the NFL, the longest career length is Full Back (FB), followed closely by Punter (P). As expected, every postitions' average career length decreases when selected after the 1st round (career length by position in Query 7 compared to Query 6). 
 
 ## Position Played Conclusion 
-With their 1st round pick, NFL teams should focus their first round scouting on any position of need as they will get a significantly longer career than the average player drafted in any other round. However, in the other rounds, NFL teams should focus their scouting on QB, OL and DL for the best ROI. RBs have the shortest career length regardless of round and excluding outliers.
+With their 1st round pick, NFL teams should focus their scouting on the positions their team needs rather than a specific position based on career length, since all positions have a significantly longer career simply by being picked in the 1st round. Similarly in further rounds, it appears that there is not a correlation between longevity of careers and number of players drafted for a particular position. This would indicate that a more significant correlation exists between position drafted and the amount of each position needed to start the team compared to position drafted and the average career length of that position. 
 
 ## Final Analysis:
 
@@ -454,6 +455,6 @@ With their 1st round pick, NFL teams should focus their first round scouting on 
 
 ### What positions should NFL teams scout?
 
-Ever NFL team's needs will be different based on roster composition so NFL teams should scout based on positional need. To get the best bang for their buck in terms of career length, teams should scout in the first round and take the player they need most there as they last on average over three years longer than any other round.  
+Ever NFL team's needs will be different based on roster composition so NFL teams should scout based on positional need. Since players in the 1st round have on average a career three years longer than other rounds, teams should focus more on the state and college the player attended than position they play. Players should be drafter by position as needed by the team, and could potentially focus on having more 1st round picks (teams can trade players/picks prior to drafting).
 
-**Future questions to answer and other things to consider:** Does contract structure play a role in average career length? Do NFL teams give players drafted higher more chances than lower drafted players? What is the average career length for undrafted players?
+**Future questions to answer and other things to consider:** Should scouting efforts be concentrated on the number of starting players for each position as indicated in Query 6 and 7? How does contract structure and contract length play a role in average career length? Does higher player compensation correlate to longer career? What is the average career length for undrafted free-agent players that get signed?
