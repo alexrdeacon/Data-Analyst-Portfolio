@@ -422,7 +422,7 @@ With their 1st round pick, NFL teams should focus their scouting on the position
 
 ## Final Analysis:
 
-## Where NFL scouts should focus their scouting based on States:
+### Where NFL scouts should focus their scouting based on States:
 
 | Rank | 1st Round Scouting | All Other Rounds Scouting |
 |:----:|:------------------:|:-------------------------:|
