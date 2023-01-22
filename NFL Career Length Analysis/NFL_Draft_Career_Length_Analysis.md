@@ -39,7 +39,7 @@ For a short summary of the pre-cleaning steps taken in Excel, click [here](CLEAN
 
 How does the round a player is drafted in affect their career length?
 
-We will use **WHERE** to limit analysis to rounds 1-7, and to exclude players who are currently active. We will **GROUP BY** _Round_ and **ORDER BY** _Career_Length_ from longest career to shortest.
+We will use **WHERE** to limit analysis to rounds 1-7, and **GROUP BY** _Round_ and **ORDER BY** _Career_Length_ to organize players from longest career to shortest.
 
 ### Query 1:
 
@@ -75,10 +75,10 @@ ORDER BY
 |   6   |      3.61     |
 |   7   |      3.08     |
 
-Based on the Query, the best round to be drafted in for the longest possible career length is the 1st Round. Career length in the 1st round is over 1.5 years longer than players drafted in the 2nd round, and over 5.4 years longer than players drafted in the last round in the draft (7th).
+Based on the Query, the draft round correlated to the longest possible career length is the 1st Round. Career length in the 1st round is over 1.5 years longer than players drafted in the 2nd round, and over 5.4 years longer than players drafted in the last round in the draft (7th).
 
 ### Round Selected in Conclusion: 
-Being drafted in the 1st round gives you the longest average career length. Teams will want to have as many 1st and 2nd round picks as possible, as career length drops off steeply after the 2nd round.
+Being drafted in the 1st round gives you the longest average career length. Teams will want to have as many 1st and 2nd round picks as possible if they are interested in longevity of players, as career length drops off steeply after the 2nd round.
 
 ## College State Location
 
