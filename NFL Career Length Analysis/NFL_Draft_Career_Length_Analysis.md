@@ -75,6 +75,8 @@ ORDER BY
 |   6   |      3.61     |
 |   7   |      3.08     |
 
+![Chart](https://github.com/alexrdeacon/Data-Analyst-Portfolio/blob/main/Query1_Chart.png?raw=true)
+
 Based on the Query, the draft round correlated to the longest possible career length is the 1st Round. Career length in the 1st round is over 1.5 years longer than players drafted in the 2nd round, and over 5.4 years longer than players drafted in the last round in the draft (7th).
 
 ### Round Selected in Conclusion: 
@@ -126,6 +128,8 @@ ORDER BY
 |   9  |    Oklahoma    |      50      |
 |  10  | North Carolina |      48      |
 
+![Chart](https://github.com/alexrdeacon/Data-Analyst-Portfolio/blob/main/Query2_Chart.png?=raw)
+
 Based on this query, the state to scout for the best chance of finding 1st round level talent is California with 169 players taken since 1970, followed closely by Florida with 147 players taken.
 
 Knowing that the 1st round has the highest career lengths and which states are most likely to have players that get drafted 1st round is important. Yet not every player is a 1st round contestant - what are the top 10 states in average career length excluding 1st round draft picks?
@@ -171,6 +175,8 @@ ORDER BY
 |   8  |  Rhode Island |      4.13     |       8       |
 |   9  |    Indiana    |      4.12     |      251      |
 |  10  |  Connecticut  |      4.12     |       57      |
+
+![Chart](https://github.com/alexrdeacon/Data-Analyst-Portfolio/blob/main/Query3_Chart.png?=raw)
 
 Based on this query, the top state to be drafted from for the longest career length outside of the 1st round picks is Maryland, with an average career length of 4.5 years.
 
@@ -244,6 +250,8 @@ ORDER BY
 |   9  |   Ohio St.  |   1   |      8.29     |       56      |
 |  10  |   Penn St.  |   1   |      8.22     |       32      |
 
+![Chart](https://github.com/alexrdeacon/Data-Analyst-Portfolio/blob/main/Query4_Chart.png?=Raw)
+
 For the best chance at getting taken in the 1st round and having the longest possible career, players should attend Miami (FL) which just edges out USC by 0.05 years.
 
 Of the top 10 colleges by total amount of players drafted, which ones have the longest average career length for non 1st rounders?
@@ -309,6 +317,8 @@ ORDER BY
 |   9  |  Nebraska  |      3.78     |      240      |
 |  10  |  Oklahoma  |      3.2      |      215      |
 
+![Chart](https://github.com/alexrdeacon/Data-Analyst-Portfolio/blob/main/Query5_Chart.png?=raw)
+
 Of the top 10 colleges by players drafted in 2nd - 7th rounds, Penn St. takes the lead for longest career length, followed closely by USC.
 
 ## College Drafted From Conclusion 
@@ -368,6 +378,8 @@ ORDER BY
 |  10  |    FB    |      7.75     |       4       |                  0.25                 |
 |  11  |    RB    |      7.6      |      167      |                 10.40                 |
 
+![Chart](https://github.com/alexrdeacon/Data-Analyst-Portfolio/blob/main/Query6_Chart.png?=raw)
+
 Excluding the three positions from the above table with an insignificant amount of players taken (Punter, Kicker and Full Back), the position with the longest career is QB. There is nearly a two year difference between QB and the shortest length career of RB. If we look at the number of players taken for each position, there is not a correlation between career length and players taken. This may be due to the fact that there are different numbers of players needed to start for every position. For example, teams only need one starting QB but 5 starting OL and 3-4 starting DL. Therefore, more QBs and OLs were drafted in the first round, despite their average career length being slightly less than a QBs.
 
 On average, which drafted position has the longest career when not drafted in the 1st round?
@@ -400,7 +412,7 @@ ORDER BY
 
 ### Results from Query 7:
 
-| Rank | Position | Career_Length | Players_Taken |
+| Rank | Position | Career_Length | Players_Taken | 
 |:----:|:--------:|:-------------:|:-------------:|
 |   1  |    FB    |      5.91     |       81      |
 |   2  |     P    |      5.16     |      146      |
@@ -414,6 +426,8 @@ ORDER BY
 |  10  |    WR    |      3.36     |      1644     |
 |  11  |    RB    |      3.13     |      1523     |
 |  12  |    LS    |      1.5      |       4       |
+
+![Chart](https://github.com/alexrdeacon/Data-Analyst-Portfolio/blob/main/Query7_Chart.png?=raw)
 
 Of the 12 general positions in the NFL, the longest career length is Full Back (FB), followed closely by Punter (P). As expected, every postitions' average career length decreases when selected after the 1st round (career length by position in Query 7 compared to Query 6). 
 
