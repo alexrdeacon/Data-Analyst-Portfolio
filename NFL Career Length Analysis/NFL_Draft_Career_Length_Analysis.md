@@ -2,7 +2,7 @@
 
 Scenario: The NFL wants to identify where to concentrate scouting efforts in order to get players who will have long term careers. They want to see how different variables such as college attended, state of college attended, position, and round drafted in affects a player's career length. 
 
-Unless otherwise stated, the analysis does not include active players. We do not want to include players who have not retired as their careers are not over yet, and would influence the career length averages to be shorter. While this analysis covers the draft years from the NFL merger in 1970 to present time, the NFL has changed the amount of rounds in the draft a total of 3 times before settling at 7 rounds in 1994. Therefore, this analysis is limited to 7 rounds of draft picks for consistency.
+Unless otherwise stated, the analysis does not include active players. We do not want to include players who have not retired as their careers are not over yet, and would influence the career length averages to be shorter.
 
 Original data set used: [Kaggle](https://www.kaggle.com/datasets/cviaxmiwnptr/nfl-draft-19702021)
 
