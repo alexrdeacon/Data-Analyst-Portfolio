@@ -1,5 +1,7 @@
 This is a short summary of the cleaning and changes made within Excel before importing into SQL server management studio and Tableau.
 
+Every college in the US data copied from [here](https://www.theedadvocate.org/an-a-z-list-of-u-s-colleges-and-universities/)
+
 Assinged every player their state correct state using functions and manual entry.
 
 Calculated "Years_Played" column for players (Year last played - Year drafted = Career length)
