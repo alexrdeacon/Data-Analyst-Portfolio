@@ -92,7 +92,7 @@ We will use **SELECT TOP 10** to select the first 10 results in the query, **WHE
 SELECT TOP 10 
 -- Select first 10 results
 	State,
-	COUNT(Round) AS Players_Taken
+	COUNT(Round) AS Players_Taken_1st_Round
 	-- amount of players taken
 FROM
 	NFL_Draft_Cleaned$
@@ -113,18 +113,18 @@ ORDER BY
 
 ### Results from Query 2:
 
-| Rank |      State     | Career_Length | Players_Taken |
-|:----:|:--------------:|:-------------:|:-------------:|
-|   1  |   California   |      9.2      |      169      |
-|   2  |     Florida    |      9.03     |      147      |
-|   3  |      Texas     |      7.6      |      109      |
-|   4  |     Alabama    |      8.65     |       66      |
-|   5  |      Ohio      |      8.47     |       60      |
-|   6  |  Pennsylvania  |      8.59     |       59      |
-|   7  |    Michigan    |      8.79     |       56      |
-|   8  |    Tennessee   |      8.58     |       53      |
-|   9  |    Oklahoma    |      7.36     |       50      |
-|  10  | North Carolina |      9.54     |       48      |
+| Rank |      State     | Players_Taken_1st_round |
+|:----:|:--------------:|:-------------:|
+|   1  |   California   |     169      |
+|   2  |     Florida    |     147      |
+|   3  |      Texas     |     109      |
+|   4  |     Alabama    |      66      |
+|   5  |      Ohio      |       60      |
+|   6  |  Pennsylvania  |        59      |
+|   7  |    Michigan    |        56      |
+|   8  |    Tennessee   |         53      |
+|   9  |    Oklahoma    |      50      |
+|  10  | North Carolina |      48      |
 
 Based on this query, the state to scout for the best chance of finding 1st round level talent is California with 169 players taken since 1970, followed closely by Florida with 147 players taken.
 
