@@ -11,7 +11,7 @@ Hi, I'm Alexander and I am a Data Analyst. I recently earned my certificate in D
 
 Since I was young, I have always enjoyed sorting through information and finding ways to bring numbers to life. I would constantly be tinkering with data, whether it was writing custom excel formulas to make scouting reports for players in Madden, or creating calculators to assist in family members’ pricing for their businesses. Having a problem that needs solving, working through it, and providing solutions is a fun challenge to me.
 
-I have a vast background in multiple fields such as healthcare, quality assurance, graphic design and media production. Knowing how the front end of these processes work has helped me have a fresh and new perspective to translate business questions into digestible and useful insights. You can connect with me at my [LinkedIn](https://www.linkedin.com/in/alexanderrdeacon/).
+I have a vast background in multiple fields such as healthcare, quality assurance, graphic design and media production. Knowing how the front end of these processes work has helped me have a fresh and new perspective to translate business questions into digestible and useful insights. You can connect with me at my [LinkedIn](https://www.linkedin.com/in/alexrdeacon/).
 
 This is a repository to showcase my skills in data analytics.
 
