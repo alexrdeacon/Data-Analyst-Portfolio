@@ -7,7 +7,11 @@
 * [Certificates](INTRO.md#certificates)
 
 ## About
-Hello, I'm Alexander, but I go by Alex! I am a former freelancing video editor and graphic designer who has made the transition over to Data Analytics. I have a Bachelor of Arts degree in Media (University at Buffalo), majoring in production with a minor in sociology. After moving to a different state (NY to PA) I decided to take time to figure out what I truly wanted to do. I have used Excel to analyze data and always enjoyed doing it, but only recently found out you can have a career in it. After some soul searching I stumbled upon SQL, signed up for the Google Data Analytics course and never looked back! I regularly practice my skills with codewars problems, doing personal analytic projects with Tableau, Microsoft SQL Server Management studio and Excel/Google Sheets. You can connect with me at my [LinkedIn](https://www.linkedin.com/in/alexanderrdeacon/).
+Hi, I'm Alexander and I am a Data Analyst. I recently earned my certificate in Data Analytics and I hold a Bachelor of Arts degree in Media (University at Buffalo). 
+
+Since I was young, I have always enjoyed sorting through information and finding ways to bring numbers to life. I would constantly be tinkering with data, whether it was writing custom excel formulas to make scouting reports for players in Madden, or creating calculators to assist in family members’ pricing for their businesses. Having a problem that needs solving, working through it, and providing solutions is a fun challenge to me.
+
+I have a vast background in multiple fields such as healthcare, quality assurance, graphic design and media production. Knowing how the front end of these processes work has helped me have a fresh and new perspective to translate business questions into digestible and useful insights. You can connect with me at my [LinkedIn](https://www.linkedin.com/in/alexanderrdeacon/).
 
 This is a repository to showcase my skills in data analytics.
 
